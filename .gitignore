@@ -1,0 +1,9 @@
+# Not ignore files
+!.gitignore
+
+# Ignore files
+package-lock.json
+
+# Ignore folders
+node_modules/
+.vscode/
