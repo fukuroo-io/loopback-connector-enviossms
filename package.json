@@ -1,14 +1,46 @@
 {
-  "name": "smssender",
+  "name": "loopback-connector-enviossms",
   "version": "1.0.0",
-  "description": "",
+  "description": "Loopback connector for consume rest api of http://www.enviossms.com",
+  "keywords": [
+    "loopback", "connector", "loopback connector", "enviossms"
+  ],
+  "engines": {
+    "node": ">=8.11.2",
+    "npm": ">=6.0.0"
+  },
+  "private": false,
+  "homepage": "https://github.com/fukuroo-io/loopback-connector-enviossms#readme",
+  "bugs": {
+    "url": "https://github.com/fukuroo-io/loopback-connector-enviossms/issues",
+    "emails": [
+      "diego.zapata@fukuroo.io",
+      "felipe.dallacosta@fukuroo.io",
+      "cristian.bullokles@fukuroo.io"
+    ]
+  },
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./**; exit 0",
     "test": "mocha tests/unit/*.test.js --reporter spec"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Diego A. Zapata Hantsch",
+  "contributors": [
+    {
+      "name": "Cristian Bullokles",
+      "email": "cristian.bullokles@fukuroo.io",
+      "url": "https://github.com/cbullokles"
+    }
+  ],
+  "directories": {
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fukuroo-io/loopback-connector-enviossms"
+  },
+  "license": "MIT",
   "dependencies": {
     "debug": "^3.1.0",
     "node-rest-client": "^3.1.0"
