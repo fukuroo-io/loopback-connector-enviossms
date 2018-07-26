@@ -30,7 +30,7 @@ $ npm install loopback-connector-enviossms --save
 ...
 ```
 
-3. Attach your model to the enviossms datasource in model-config.json
+3. Attach your model to the enviossms datasource in `model-config.json`
 ```json
 ...
 "sms": {
