@@ -39,7 +39,7 @@ $ npm install loopback-connector-enviossms --save
 },
 ...
 ```
-4. Then use it in your model sms like this
+4. Then use it in your model `sms` like this
 ```js
 // sms.js
 'use strict';
