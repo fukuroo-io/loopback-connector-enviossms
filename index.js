@@ -1,4 +1,3 @@
 'use strict';
-const initializeDataSource = require('./lib/initialize-datasource');
 
-module.exports.initialize = initializeDataSource;
+module.exports = require('./lib/connector');
