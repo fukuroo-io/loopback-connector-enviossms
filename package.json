@@ -1,9 +1,12 @@
 {
   "name": "loopback-connector-enviossms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Loopback connector for consume rest api of http://www.enviossms.com",
   "keywords": [
-    "loopback", "connector", "loopback connector", "enviossms"
+    "loopback",
+    "connector",
+    "loopback connector",
+    "enviossms"
   ],
   "engines": {
     "node": ">=8.11.2",
