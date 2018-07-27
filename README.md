@@ -46,23 +46,25 @@ $ npm install loopback-connector-enviossms --save
 const chalk = require('chalk'); // chalk is optional
 
 module.exports = function(sms) {
-  const options = {
-    to: '+5493511122334',
-    text: 'My sms text',
-  }
+  sms.observe('before save', function(ctx, next) {
+    const options = {
+      to: ctx.instance.to || '+5493511122334',
+      text: ctx.instnace.text || 'My sms text',
+    }
 
-  sms.sendSimpleSms(options)
-    .then((res) => {
-      // res options is an array  with 2 index,
-      // which has a parsed response body in index 0
-      // and a raw response in index 1
-      console.log(chalk.green(JSON.stringify(res[0])));
-      next();
-    })
-    .catch((err) => {
-      console.log(chalk.red(err));
-      next(new Error(err));
-    });
+    sms.sendSimpleSms(options)
+      .then((res) => {
+        // res options is an array  with 2 index,
+        // which has a parsed response body in index 0
+        // and a raw response in index 1
+        console.log(chalk.green(JSON.stringify(res[0])));
+        next();
+      })
+      .catch((err) => {
+        console.log(chalk.red(err));
+        next(new Error(err));
+      });
+  });
 }
 ```
 
@@ -75,15 +77,17 @@ const chalk = require('chalk');
 
 module.exports = function(Notifications) {
   Notifications.observe('before save', function(ctx, next) {
-    Notifications.app.models.sms.sendSimpleSms(options)
+    Notifications.app.models.sms.sendSimpleSms(ctx.instance.options)
       .then((res) => {
         // res options is an array  with 2 index,
         // which has a parsed response body in index 0
         // and a raw response in index 1
         console.log(chalk.green(JSON.stringify(res[0])));
+        next();
       })
       .catch((err) => {
         console.log(chalk.red(err));
+        next(new Error(err));
       });
   });
 };
